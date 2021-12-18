@@ -1,0 +1,21 @@
+import java.util.*;
+
+class Solution {
+    public String solution(String[] participant, String[] completion) {   
+        Arrays.sort(participant);
+        Arrays.sort(completion);
+        
+        int i=0;
+        try {
+            for(i=0;i<participant.length;i++) {
+                if(!participant[i].equals(completion[i])) {
+                    return participant[i];
+                }
+            }
+        }
+        catch(Exception e) {
+            return participant[i];
+        }
+        return "";
+    }
+}
