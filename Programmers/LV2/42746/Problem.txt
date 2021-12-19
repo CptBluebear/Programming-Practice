@@ -1,0 +1,5 @@
+https://programmers.co.kr/learn/courses/30/lessons/42746
+
+몇일 고민한 문젠데
+규칙을 너무 어렵게 생각했다.
+그냥 두 숫자 붙혀보고 누가 더 큰지 비교만 하면 되는걸....
