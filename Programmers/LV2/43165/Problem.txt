@@ -1,0 +1,7 @@
+https://programmers.co.kr/learn/courses/30/lessons/43165
+
+약간 생각의 전환을 해서
+그냥 다 더하고 하나씩 빼보면 답 나오는거 아닌가 하고 풀어보니 답 나왔다.
+
+주어진 numbers에 대한 멱집합을 구해 이를 numbers의 합에서 뺀것이 target과 같으면
+answer++ 하는 방식으로 풀었다.
