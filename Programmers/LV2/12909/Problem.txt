@@ -1,0 +1,6 @@
+https://programmers.co.kr/learn/courses/30/lessons/12909
+
+Queue, Stack써보고
+String s를 split해서 배열로 만들어 꺼내쓰는 과정을 거쳤는데
+이거 다 안되서 결국
+Queue, Stack 없애고 s.charAt으로 처리하니 시간초과 해결되었다.
