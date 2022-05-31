@@ -6,24 +6,34 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-		String[] initValue = reader.readLine().split(" ");
-		int size = Integer.parseInt(initValue[0]);
-		int caseNum = Integer.parseInt(initValue[1]);
-
-		int[] array = new int[size];
-		int[] sum = new int[size + 1];
-		String[] data = reader.readLine().split(" ");
-		for (int i = 0; i < size; i++) {
-			int num = Integer.parseInt(data[i]);
-			array[i] = num;
-			sum[i + 1] = sum[i] + num;
-		}
-
+		String[] initData = reader.readLine().split(" ");
+		int size = Integer.parseInt(initData[0]);
+		int caseNum = Integer.parseInt(initData[1]);
+		int[][] numbers = new int[size][size];
+		int[][] sumArr = new int[size + 1][size + 1];
 		StringBuilder stringBuilder = new StringBuilder();
 
+		for (int i = 0; i < size; i++) {
+			String[] data = reader.readLine().split(" ");
+			for (int j = 0; j < size; j++) {
+				numbers[i][j] = Integer.parseInt(data[j]);
+			}
+		}
+
+		for (int i = 1; i < size + 1; i++) {
+			for (int j = 1; j < size + 1; j++) {
+				sumArr[i][j] = sumArr[i - 1][j] + sumArr[i][j - 1] - sumArr[i - 1][j - 1] + numbers[i - 1][j - 1];
+			}
+		}
+
 		while (caseNum-- > 0) {
-			String[] section = reader.readLine().split(" ");
-			int result = sum[Integer.parseInt(section[1])] - sum[Integer.parseInt(section[0]) - 1];
+			String[] data = reader.readLine().split(" ");
+			int x1 = Integer.parseInt(data[0]);
+			int y1 = Integer.parseInt(data[1]);
+			int x2 = Integer.parseInt(data[2]);
+			int y2 = Integer.parseInt(data[3]);
+
+			int result = sumArr[x2][y2] - sumArr[x2][y1 - 1] - sumArr[x1 - 1][y2] + sumArr[x1 - 1][y1 - 1];
 			stringBuilder.append(result).append("\n");
 		}
 
